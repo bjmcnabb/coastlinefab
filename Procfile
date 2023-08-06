@@ -1,1 +1,1 @@
-web: gunicord coastlinefab.wgsi --log-file -
+web: gunicord coastlinefab.wsgi --log-file -
