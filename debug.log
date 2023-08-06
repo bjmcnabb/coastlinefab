@@ -32449,3 +32449,7 @@ File C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\contrib\a
 File C:\Users\bcamc\OneDrive\Desktop\Python\projects\django\coastlinefab\coastlinefab\templates\base.html previous mtime: 1691302179.303289, current mtime: 1691364184.8922217
 C:\Users\bcamc\OneDrive\Desktop\Python\projects\django\coastlinefab\coastlinefab\templates\base.html notified as changed. Signal results: [(<function template_changed at 0x000002261BF56D40>, True)].
 File C:\Users\bcamc\OneDrive\Desktop\Python\projects\django\coastlinefab\homepage\templates\homepage.html previous mtime: 1691363534.0283546, current mtime: 1691364265.4088984
+C:\Users\bcamc\OneDrive\Desktop\Python\projects\django\coastlinefab\homepage\templates\homepage.html notified as changed. Signal results: [(<function template_changed at 0x000002261BF56D40>, True)].
+File C:\Users\bcamc\OneDrive\Desktop\Python\projects\django\coastlinefab\homepage\templates\homepage.html previous mtime: 1691364265.4088984, current mtime: 1691364660.8827782
+C:\Users\bcamc\OneDrive\Desktop\Python\projects\django\coastlinefab\homepage\templates\homepage.html notified as changed. Signal results: [(<function template_changed at 0x000002261BF56D40>, True)].
+File C:\Users\bcamc\OneDrive\Desktop\Python\projects\django\coastlinefab\homepage\templates\homepage.html previous mtime: 1691364660.8827782, current mtime: 1691364668.6732678
