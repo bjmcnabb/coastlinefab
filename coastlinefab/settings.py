@@ -37,7 +37,7 @@ DEBUG = True
 
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1','localhost','coastlinefabricators.ca','coastlinefab-production.up.railway.app']
-INTERNAL_IPS = ('0.0.0.0','127.0.0.1','localhost','coastlinefabricators.ca','coastlinefab-production.up.railway.app')
+INTERNAL_IPS = ('0.0.0.0','127.0.0.1','localhost',)
 
 DEFAULT_AUTO_FIELD='django.db.models.BigAutoField'
 
