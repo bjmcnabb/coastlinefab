@@ -77,7 +77,7 @@ strong {
     width:300px;
     height:225px;
     display: flex;
-    align-items: stretch;
+    align-items: 0 0 auto;
 }
 
 .dpg-album-card-main, .dpg-album-image-main {
@@ -91,14 +91,19 @@ strong {
 }
 
 .card .card-content {
+  padding: 5%;
   height: auto;
   width: auto;
+  justify-content: center !important;
   display:flex!important;
-   align-items: stretch!important;
+  align-items: stretch!important;
 }
 
 .card-title{
+  text-align: center;
+  min-height: 100px !important;
   height: 90%;
+  justify-content: center !important;
   display: flex;
   align-items: stretch;
 }
