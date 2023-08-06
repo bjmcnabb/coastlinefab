@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block styles %}
+
+<style>
+	body {
+	background: url('{% static "images/welding-bgd.JPG" %}') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size: cover;
+	}
+	table {
+		font-family: arial, sans-serif;
+		border-collapse: collapse;
+		min-width: 350px;
+		max-width: 40%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	td, th {
+		border: 1px solid rgba(52,58,64,1);
+		text-align: center;
+		padding: 8px;
+	}
+	tr:nth-child(odd) {
+		background-color: #FFFFFF;
+	}
+	tr:nth-child(even) {
+		/* background-color: #dddddd; */
+		background-color: rgba(52,58,64,1);
+		color: #FFFFFF;
+	}
+</style>
+
+{% endblock %}
+
+{% block page_content %}
+
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+<!-- <div class="jumbotron centering" id="other-jumbotron" style="opacity: 1; background-color: rgba(52,58,64,0.9);"> -->
+<div class="jumbotron centering" id="other-jumbotron" style="background-color: rgba(0,0,0,0.8);">
+		<div class='col-sm-12' style="margin: auto; justify-content: center; align-items: center; text-align: center">
+			<!-- <hr> -->
+			<div class='row-sm-12' style="margin: auto;  justify-content: center">			
+				<p style="font-size: 24; color: rgba(255,255,255,1);">For inquiries, quotes, or material sales, contact: </p>
+				<p style="font-size: 24; color: rgba(255,255,255,1); font-weight: bold; list-style-type: none; ">Craig McNabb</p>
+			</div>
+			<div class='row-sm-12' style="margin: auto;  justify-content: center">
+				<p style="font-size: 18; color: rgba(255,255,255,1); margin-bottom: 0;">Cell: <a style="color: #86aef8" href="tel:2506500983">(250) 650-0983</a></p>
+				<p style="font-size: 18; color: rgba(255,255,255,1);">Email: <a style="color: #86aef8" href="mailto:coastlinefabricators@shaw.ca">coastlinefabricators@shaw.ca</a></p>
+			</div>
+		</div>
+	<!-- </div> -->
+	<!-- <div class="jumbotron centering" id="other-jumbotron" style="background-color: rgba(52,58,64,0.9);"> -->
+	<div class='row' style="margin: auto;  justify-content: center; align-items: center;">
+		<div class='col-sm-8 text-center' style="margin: auto;">
+			<br>
+			<hr>
+			<p style="font-size: 24; color: rgba(255,255,255,1);">Business Hours</p>
+			<table>
+				<tr>
+					<th>Monday</th>
+					<th>Closed</th>
+				</tr>
+				<tr>
+					<th>Tuesday</th>
+					<th>8:00am - 5:00pm</th>
+				</tr>
+				<tr>
+					<th>Wednesday</th>
+					<th>8:00am - 5:00pm</th>
+				</tr>
+				<tr>
+					<th>Thursday</th>
+					<th>8:00am - 5:00pm</th>
+				</tr>
+				<tr>
+					<th>Friday</th>
+					<th>8:00am - 5:00pm</th>
+				</tr>
+				<tr>
+					<th>Saturday</th>
+					<th>8:00am - 5:00pm</th>
+				</tr>
+				<tr>
+					<th>Sunday</th>
+					<th>8:00am - 5:00pm</th>
+				</tr>
+				<tr>
+					<th>Statutory Holidays</th>
+					<th>Closed</th>
+				</tr>
+			</table>
+		</div>
+		<br>
+	    <div class='col-sm-8' style="margin: auto">
+			<hr>
+			<p style="font-size: 24; color: rgba(255,255,255,1);">Located at 3224 Royston Road, Courtenay BC</p>
+			<div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
+					<div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3" class="text-center"></div><script>(function () {
+					var setting = {"height":540,"zoom":8,"queryString":"3224 Royston Road, Courtenay, BC, Canada","place_id":"ChIJWxjciSoViFQRaGmfCDADcqE","satellite":true,"centerCoord":[49.62601676867647,-124.99375755],"cid":"0xa1720330089f6968","lang":"en","cityUrl":"/canada/courtenay-2525","cityAnchorText":"Map of Courtenay, British Columbia, Canada","id":"map-9cd199b9cc5410cd3b1ad21cab2e54d3","embed_id":"883331"};
+			        var d = document;
+			        var s = d.createElement('script');
+			        s.src = 'https://1map.com/js/script-for-user.js?embed_id=883331';
+			        s.async = true;
+			        s.onload = function (e) {
+			          window.OneMap.initMap(setting)
+			        };
+			        var to = d.getElementsByTagName('script')[0];
+			        to.parentNode.insertBefore(s, to);
+			      })();</script><a href="https://1map.com/map-embed" style="width: 100%;">1 Map</a></div>
+		<hr>	
+		<p style="font-size: 14; color: rgba(255,255,255,1)">Web design by <a style="color: #86aef8" href="https://github.com/bjmcnabb">Brandon McNabb</a></p>	
+		</div>
+	</div>
+</div>	
+
+{% endblock %}

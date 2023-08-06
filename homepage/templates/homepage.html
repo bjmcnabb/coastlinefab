@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block styles %}
+
+<style>
+	body {
+	background: url('{% static "images/welding-bgd.JPG" %}') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size: cover;
+	}	
+</style>
+
+{% endblock %}
+
+{% block page_content %}
+
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="jumbotron centering" id="other-jumbotron" style="background-color: rgba(52,58,64,0);">
+	<div class='col-sm-8' style="padding-left: 0; padding-right: 0; margin: auto; background-color: rgba(0,0,0,0.7);">
+		<hr>			
+		<p style="padding-left: 20px; padding-right: 20px; font-size: 18; color: rgba(255,255,255,1);">Coastline fabricators has been serving the Comox Valley and greater Vancouver Island for the past 20+ years. Specializing in marine aluminum and steel fabrication, we service a wide variety of applications tailored to individual client's needs, including: vessel outfitting, kicker brackets, trailers, aquaculture pens, and more. For inquiries, quotes, or material sales, please contact us. </p>
+		<hr>		
+	</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="jumbotron" id="gallery-wrapper" style="padding-bottom: 0;background-color: rgba(0,0,0,0.9); padding-top: 0.5%">
+	<h1 style="text-align: center; font-family:Harlow Solid !important; color: rgba(255,255,255,0.8)">Featured Projects:</h1>
+	
+	<div id="carousel-container">
+		
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="max-width: 75%; width: auto; height: auto; margin: auto">
+			<ol class="carousel-indicators">
+				{% for slide in slides|dictsort:"created" %}
+					{% if forloop.first %}
+						<li data-target="#carouselExampleIndicators" data-slide-to="{{forloop.counter0}}" class="active"></li>
+					{% else %}
+						<li data-target="#carouselExampleIndicators" data-slide-to="{{forloop.counter0}}"></li>
+					{% endif %}
+				{% endfor %}
+			</ol>
+			<div class="carousel-inner">
+				{% for slide in slides|dictsort:"created" %}
+					{% if forloop.first %}
+						<div class="carousel-item active text-center">
+					{% else %}
+						<div class="carousel-item text-center">
+					{% endif %}
+					<img class="img-fluid gallery-pic w-75" src="{{slide.image.url}}" alt="" style="width: 100%; max-height: 700px; object-fit: cover;">
+					<!-- <div class="carousel-caption d-none d-md-block">
+						<p style="color: rgba(255,255,255,1)">{{slide.description}}</p>
+					</div> -->
+					</div>
+				{% endfor %}
+			</div>
+
+			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" >
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" >
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+			</a>
+			</div>
+		</div>
+		<br>
+		<br>
+	</div>
+</div>
+
+</body>
+</html>
+
+{% endblock %}
