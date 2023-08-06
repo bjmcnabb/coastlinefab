@@ -215,10 +215,6 @@ AWS_S3_REGION_NAME="us-west-2"
 AWS_S3_SIGNATURE_VERSION ='s3v4'
 AWS_S3_ADDRESSING_STYLE = "virtual"
 
-# AWS_S3_ENDPOINT_URL= 'https://sts.us-west-2.amazonaws.com'
-
-# STATIC_URL = 'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, AWS_LOCATION)
-
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 
