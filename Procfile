@@ -1,1 +1,1 @@
-web: gunicorn coastlinefab:app
+web: gunicorn wsgi:application
