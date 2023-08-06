@@ -16,7 +16,7 @@
 {% block content %}
 
 <div class="jumbotron centering" id="other-jumbotron" style="background-color: rgba(255,255,255,0.8);">
-    <div class="gallery-container ">
+    <div class="gallery-container">
         <div class="gallery-row ">
             {% for album in albums|dictsort:"title" %}
                 <div class="gallery-col s3 m3 ">
@@ -33,13 +33,13 @@
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:"3" and not forloop.last %}
+                {% if forloop.counter|divisibleby:"2" and not forloop.last %}
                 <!-- every 3rd item: close the initial row, and start a new one -->
                 </div>
                 <div class="gallery-row " style="justify-content: center">
                 {% endif %}
                 {% if forloop.last %}
-                    {% if forloop.counter|divisibleby:"3" %}
+                    {% if forloop.counter|divisibleby:"2" %}
                         <!-- on the last iteration, if a full row is complete, close the last row made -->
                         </div>
                     {% endif %}
