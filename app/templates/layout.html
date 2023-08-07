@@ -3,6 +3,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<style>
+  @font-face { 
+    font-family: 'Harlow-Solid-Italic'; 
+    src:local('Harlow-Solid-Italic Regular'),
+        local('Harlow-Solid-Italic'), 
+        url({% static 'admin/fonts/Harlow-Solid-Italic.ttf.woff' %}) format('truetype');
+    } 
+  </style>
+
 <head>
     <title>Coastline Fabricators</title>
     <link rel="shortcut icon" href="images/myicon.ico?v=2" type="image/x-icon" />
@@ -33,7 +42,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto" style="font-family:'Harlow-Solid-Italic' !important;">
         <li class="nav-item">
           <a class="nav-link" href="{% url 'homepage_index' %}">Home</a>
         </li>
