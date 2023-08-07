@@ -11,8 +11,13 @@
 	-moz-background-size:cover;
 	-o-background-size:cover;
 	background-size: cover;
-	}	
-	@import url('https://fonts.cdnfonts.com/css/harlow-solid-italic');
+	}
+	@font-face { 
+    font-family: 'Harlow-Solid-Italic'; 
+    src:local('Harlow-Solid-Italic Regular'),
+        local('Harlow-Solid-Italic'), 
+        url({% static 'admin/fonts/Harlow-Solid-Italic.ttf.woff' %}) format('truetype');
+    } 
 </style>
 
 {% endblock %}
@@ -33,7 +38,9 @@
 <div class="jumbotron centering" id="other-jumbotron" style="background-color: rgba(52,58,64,0);">
 	<div class='col-sm-8' style="padding-left: 0; padding-right: 0; margin: auto; background-color: rgba(0,0,0,0.7);">
 		<hr>			
-		<p style="padding-left: 20px; padding-right: 20px; font-size: 18; color: rgba(255,255,255,1);">Coastline fabricators has been serving the Comox Valley and greater Vancouver Island for the past 20+ years. Specializing in marine aluminum and steel fabrication, we service a wide variety of applications tailored to individual client's needs, including: vessel outfitting, kicker brackets, trailers, aquaculture pens, and more. For inquiries, quotes, or material sales, please contact us. </p>
+		<p style="padding-left: 20px; padding-right: 20px; font-size: 18; color: rgba(255,255,255,1);">Coastline fabricators has been serving the Comox Valley and greater Vancouver Island for the past 20+ years.</p>
+		<p style="padding-left: 20px; padding-right: 20px; font-size: 18; color: rgba(255,255,255,1);">Specializing in marine aluminum and steel fabrication, we service a wide variety of applications tailored to individual client's needs (<a style="color: #86aef8" href="{% url 'gallery' %}">Gallery</a>).</p>
+		<p style="padding-left: 20px; padding-right: 20px; font-size: 18; color: rgba(255,255,255,1);">For inquiries, quotes, or material sales, please <a style="color: #86aef8" href="{% url 'contact' %}">contact us</a>.</p>
 		<hr>		
 	</div>
 </div>
@@ -44,7 +51,7 @@
 <br>
 <br>
 <div class="jumbotron" id="gallery-wrapper" style="padding-bottom: 0;background-color: rgba(0,0,0,0.9); padding-top: 0.5%">
-	<h1 style="text-align: center; font-family:Harlow Solid !important; color: rgba(255,255,255,0.8)">Featured Projects</h1>
+	<h1 style="text-align: center; font-family:Harlow-Solid-Italic; color: rgba(255,255,255,0.8)">Featured Projects</h1>
 	
 	<div id="carousel-container">
 		
@@ -66,9 +73,6 @@
 						<div class="carousel-item text-center">
 					{% endif %}
 					<img class="img-fluid gallery-pic w-75" src="{{slide.image.url}}" alt="" style="width: 100%; max-height: 700px; object-fit: cover;">
-					<!-- <div class="carousel-caption d-none d-md-block">
-						<p style="color: rgba(255,255,255,1)">{{slide.description}}</p>
-					</div> -->
 					</div>
 				{% endfor %}
 			</div>

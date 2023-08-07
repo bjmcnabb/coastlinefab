@@ -1,7 +1,14 @@
+@font-face { 
+    font-family: 'Harlow-Solid-Italic'; 
+    src:local('Harlow-Solid-Italic Regular'),
+        local('Harlow-Solid-Italic'), 
+        url({% static 'admin/fonts/Harlow-Solid-Italic.ttf.woff' %}) format('truetype');
+    } 
+
 html, body {
 	height: 100%;
 	/*padding: 0px;*/
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, 'Harlow Solid Italic' !important;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, 'Harlow-Solid-Italic';
 	margin: 0px;
 	max-width: 100%;
 	overflow: none!important;
@@ -64,7 +71,7 @@ hr{
 	line-height: 1 !important;
     /*background-color: #000000 !important; */
     /* background-color: #e74c3c !important; */
-    font-family:Harlow Solid !important;
+    font-family:'Harlow-Solid-Italic' !important;
 
 .navbar-nav > li {
     display: inline-block;
