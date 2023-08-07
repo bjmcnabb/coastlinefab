@@ -43,13 +43,6 @@
                         <!-- on the last iteration, if a full row is complete, close the last row made -->
                         </div>
                     {% endif %}
-                    {% if forloop.counter|divisibleby:"2"%}
-                        <!-- Else: on the last iteration, add one extra card + close the last row made -->
-                        <div class="gallery-col s3 m3 ">
-                            <div class="card dpg-album-card-main" style="opacity: 0;"></div>
-                        </div>
-                        </div>
-                    {% endif %}
                 {% endif %}
             {% endfor %}
         </div>
