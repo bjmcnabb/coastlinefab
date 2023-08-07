@@ -65,8 +65,8 @@ strong {
 }
 
 .dpg-album-card-image {
-    width:300px;
-    height:225px;
+    /* width:300px; */
+    /* height:225px; */
 }
 
 .dpg-album-card, .dpg-album-image {
@@ -84,16 +84,21 @@ strong {
   /*max-width: 100%;*/
     max-width:300px;
     /*max-height:225px;*/
-    /*width: auto;*/
-    /*height: auto;*/
-    /*display: flex;*/
+    /* width: auto;
+    height: auto; */
+    display: flex;
     /*align-items: stretch;*/
+    font-size: 100%;
+    margin: 0 auto;
+    margin-bottom: 5%; 
+    min-height: 404px;
+    min-width: 175px !important;
 }
 
 .card .card-content {
   padding: 5%;
-  height: auto;
-  width: auto;
+  /* height: auto; */
+  /* width: auto; */
   justify-content: center !important;
   display:flex!important;
   align-items: stretch!important;

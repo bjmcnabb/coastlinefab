@@ -30,7 +30,7 @@ hr{
 
 .gallery-col {
 	flex: 1;	
-  	flex-basis: 30%;
+  	flex-basis: 40%;
   	margin-left: 5px;
   	margin-right: 5px;
   	/*box-sizing: border-box;*/
@@ -43,14 +43,6 @@ hr{
 	align-items: center;
 	flex-flow: row wrap;
 
-}
-
-.gallery-card {
-	font-size: 100%;
-	margin: 0 auto;
-	margin-bottom: 5%; 
-	min-height: 404px;
-	min-width: 175px !important;
 }
 
 .gallery-card-title {
