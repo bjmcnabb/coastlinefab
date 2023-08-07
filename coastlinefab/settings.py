@@ -142,6 +142,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+CSRF_TRUSTED_ORIGINS = ['https://www.coastlinefabricators.ca']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
