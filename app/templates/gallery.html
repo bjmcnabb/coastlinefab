@@ -20,7 +20,7 @@
         <div class="gallery-row" style="justify-content: center">
             {% for album in albums|dictsort:"title" %}
                 <div class="gallery-col s3 m3 ">
-                    <div class="card dpg-album-card-main gallery-card">
+                    <div class="card dpg-album-card-main">
                         <div class=" card-image">
                             <img src="{{ album.thumb.url }}" alt="{{ album.title }}" class="dpg-album-card-image-main" style="width: 100%; max-height: 300px; object-fit: cover;"/>
                         </div>
@@ -36,7 +36,7 @@
                 {% if forloop.counter|divisibleby:"2" and not forloop.last %}
                 <!-- every 3rd item: close the initial row, and start a new one -->
                 </div>
-                <div class="gallery-row " style="justify-content: center">
+                <div class="gallery-row" style="justify-content: center">
                 {% endif %}
                 {% if forloop.last %}
                     {% if forloop.counter|divisibleby:"2" %}
@@ -46,7 +46,7 @@
                     {% if forloop.counter|divisibleby:"2"%}
                         <!-- Else: on the last iteration, add one extra card + close the last row made -->
                         <div class="gallery-col s3 m3 ">
-                            <div class="card dpg-album-card-main gallery-card" style="opacity: 0;"></div>
+                            <div class="card dpg-album-card-main" style="opacity: 0;"></div>
                         </div>
                         </div>
                     {% endif %}
