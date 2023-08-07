@@ -36,7 +36,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = True
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['0.0.0.0','0.0.0.0:8000','127.0.0.1','localhost','www.coastlinefabricators.ca','coastlinefab-production.up.railway.app']
+ALLOWED_HOSTS = ['0.0.0.0','0.0.0.0:8000','127.0.0.1','localhost','coastlinefabricators.ca','coastlinefab-production.up.railway.app']
 INTERNAL_IPS = ('0.0.0.0','127.0.0.1','localhost',)
 
 DEFAULT_AUTO_FIELD='django.db.models.BigAutoField'
@@ -201,30 +201,30 @@ STATICFILES_FINDERS = (
 # -----
 # S3 Bucket Config
 
-# AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
-# AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
-# AWS_STORAGE_BUCKET_NAME = 'coastlinefab-bucket1'
-# AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.us-west-2.amazonaws.com'
-# AWS_S3_OBJECT_PARAMETERS = {
-#     'CacheControl': 'max-age=86400',
-# }
-# AWS_LOCATION = ''
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+AWS_STORAGE_BUCKET_NAME = 'coastlinefab-bucket1'
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.us-west-2.amazonaws.com'
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+AWS_LOCATION = ''
 
-# AWS_S3_HOST = 's3.us-west-2.amazonaws.com'
-# AWS_S3_REGION_NAME="us-west-2"
-# AWS_S3_SIGNATURE_VERSION ='s3v4'
-# AWS_S3_ADDRESSING_STYLE = "virtual"
+AWS_S3_HOST = 's3.us-west-2.amazonaws.com'
+AWS_S3_REGION_NAME="us-west-2"
+AWS_S3_SIGNATURE_VERSION ='s3v4'
+AWS_S3_ADDRESSING_STYLE = "virtual"
 
-# AWS_S3_FILE_OVERWRITE = False
-# AWS_DEFAULT_ACL = None
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
 
-# # if Django <4.2
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+# if Django <4.2
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 
-# # if Django >=4.2
-# # STORAGES = {"default": {"BACKEND": "storages.backends.s3boto3.S3Boto3Storage"}}
-# # STORAGES = {"staticfiles": {"BACKEND": "storages.backends.s3boto3.S3StaticStorage"}}
+# if Django >=4.2
+# STORAGES = {"default": {"BACKEND": "storages.backends.s3boto3.S3Boto3Storage"}}
+# STORAGES = {"staticfiles": {"BACKEND": "storages.backends.s3boto3.S3StaticStorage"}}
 
 
 
