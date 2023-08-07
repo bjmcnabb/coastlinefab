@@ -33919,3 +33919,307 @@ C:\Users\bcamc\OneDrive\Desktop\Python\projects\django\coastlinefab\homepage\tem
 "GET / HTTP/1.1" 200 7612
 (0.000) SELECT "homepage_slide"."id", "homepage_slide"."title", "homepage_slide"."description", "homepage_slide"."image", "homepage_slide"."created", "homepage_slide"."slug" FROM "homepage_slide"; args=(); alias=default
 "GET / HTTP/1.1" 200 7612
+File C:\Users\bcamc\OneDrive\Desktop\Python\projects\django\coastlinefab\coastlinefab\templates\base.html previous mtime: 1691366775.9730208, current mtime: 1691367490.1390066
+C:\Users\bcamc\OneDrive\Desktop\Python\projects\django\coastlinefab\coastlinefab\templates\base.html notified as changed. Signal results: [(<function template_changed at 0x000002261BF56D40>, True)].
+File C:\Users\bcamc\OneDrive\Desktop\Python\projects\django\coastlinefab\coastlinefab\templates\base.html previous mtime: 1691367490.1390066, current mtime: 1691367521.889205
+C:\Users\bcamc\OneDrive\Desktop\Python\projects\django\coastlinefab\coastlinefab\templates\base.html notified as changed. Signal results: [(<function template_changed at 0x000002261BF56D40>, True)].
+File C:\Users\bcamc\OneDrive\Desktop\Python\projects\django\coastlinefab\coastlinefab\templates\base.html previous mtime: 1691367521.889205, current mtime: 1691367523.5205328
+C:\Users\bcamc\OneDrive\Desktop\Python\projects\django\coastlinefab\coastlinefab\templates\base.html notified as changed. Signal results: [(<function template_changed at 0x000002261BF56D40>, True)].
+(0.000) SELECT "homepage_slide"."id", "homepage_slide"."title", "homepage_slide"."description", "homepage_slide"."image", "homepage_slide"."created", "homepage_slide"."slug" FROM "homepage_slide"; args=(); alias=default
+"GET / HTTP/1.1" 200 7950
+(0.000) SELECT "homepage_slide"."id", "homepage_slide"."title", "homepage_slide"."description", "homepage_slide"."image", "homepage_slide"."created", "homepage_slide"."slug" FROM "homepage_slide"; args=(); alias=default
+"GET / HTTP/1.1" 200 7950
+File C:\Users\bcamc\OneDrive\Desktop\Python\projects\django\coastlinefab\coastlinefab\templates\base.html previous mtime: 1691367523.5205328, current mtime: 1691367551.6089933
+C:\Users\bcamc\OneDrive\Desktop\Python\projects\django\coastlinefab\coastlinefab\templates\base.html notified as changed. Signal results: [(<function template_changed at 0x000002261BF56D40>, True)].
+(0.000) SELECT "homepage_slide"."id", "homepage_slide"."title", "homepage_slide"."description", "homepage_slide"."image", "homepage_slide"."created", "homepage_slide"."slug" FROM "homepage_slide"; args=(); alias=default
+"GET / HTTP/1.1" 200 7897
+(0.000) SELECT "homepage_slide"."id", "homepage_slide"."title", "homepage_slide"."description", "homepage_slide"."image", "homepage_slide"."created", "homepage_slide"."slug" FROM "homepage_slide"; args=(); alias=default
+"GET / HTTP/1.1" 200 7897
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\urls\resolvers.py", line 702, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'homepage.urls' from 'C:\\Users\\bcamc\\OneDrive\\Desktop\\Python\\projects\\django\\coastlinefab\\homepage\\urls.py'> (None:None) ''>, <URLPattern '' [name='homepage_index']>], [<URLResolver <module 'contact.urls' from 'C:\\Users\\bcamc\\OneDrive\\Desktop\\Python\\projects\\django\\coastlinefab\\contact\\urls.py'> (None:None) 'contact/'>], [<URLResolver <module 'app.urls' from 'C:\\Users\\bcamc\\OneDrive\\Desktop\\Python\\projects\\django\\coastlinefab\\app\\urls.py'> (None:None) 'gallery/'>], [<URLPattern '^accounts/login/$' [name='login']>], [<URLPattern '^logout$' [name='logout']>], [<URLPattern '^media/(?P<path>.*)$'>]], 'path': 'images/myicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\urls\resolvers.py", line 702, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'homepage.urls' from 'C:\\Users\\bcamc\\OneDrive\\Desktop\\Python\\projects\\django\\coastlinefab\\homepage\\urls.py'> (None:None) ''>, <URLPattern '' [name='homepage_index']>], [<URLResolver <module 'contact.urls' from 'C:\\Users\\bcamc\\OneDrive\\Desktop\\Python\\projects\\django\\coastlinefab\\contact\\urls.py'> (None:None) 'contact/'>], [<URLResolver <module 'app.urls' from 'C:\\Users\\bcamc\\OneDrive\\Desktop\\Python\\projects\\django\\coastlinefab\\app\\urls.py'> (None:None) 'gallery/'>], [<URLPattern '^accounts/login/$' [name='login']>], [<URLPattern '^logout$' [name='logout']>], [<URLPattern '^media/(?P<path>.*)$'>]], 'path': 'images/myicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'contact.urls' from 'C:\\Users\\bcamc\\OneDrive\\Desktop\\Python\\projects\\django\\coastlinefab\\contact\\urls.py'> (None:None) 'contact/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\urls\resolvers.py", line 702, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'homepage.urls' from 'C:\\Users\\bcamc\\OneDrive\\Desktop\\Python\\projects\\django\\coastlinefab\\homepage\\urls.py'> (None:None) ''>, <URLPattern '' [name='homepage_index']>], [<URLResolver <module 'contact.urls' from 'C:\\Users\\bcamc\\OneDrive\\Desktop\\Python\\projects\\django\\coastlinefab\\contact\\urls.py'> (None:None) 'contact/'>], [<URLResolver <module 'app.urls' from 'C:\\Users\\bcamc\\OneDrive\\Desktop\\Python\\projects\\django\\coastlinefab\\app\\urls.py'> (None:None) 'gallery/'>], [<URLPattern '^accounts/login/$' [name='login']>], [<URLPattern '^logout$' [name='logout']>], [<URLPattern '^media/(?P<path>.*)$'>]], 'path': 'images/myicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'app.urls' from 'C:\\Users\\bcamc\\OneDrive\\Desktop\\Python\\projects\\django\\coastlinefab\\app\\urls.py'> (None:None) 'gallery/'>
+Not Found: /images/myicon.ico
+"GET /images/myicon.ico?v=2 HTTP/1.1" 404 2904
+File C:\Users\bcamc\OneDrive\Desktop\Python\projects\django\coastlinefab\coastlinefab\templates\base.html previous mtime: 1691367551.6089933, current mtime: 1691367565.2216842
+C:\Users\bcamc\OneDrive\Desktop\Python\projects\django\coastlinefab\coastlinefab\templates\base.html notified as changed. Signal results: [(<function template_changed at 0x000002261BF56D40>, True)].
+File C:\Users\bcamc\OneDrive\Desktop\Python\projects\django\coastlinefab\coastlinefab\templates\base.html previous mtime: 1691367565.2216842, current mtime: 1691367592.2965808
+C:\Users\bcamc\OneDrive\Desktop\Python\projects\django\coastlinefab\coastlinefab\templates\base.html notified as changed. Signal results: [(<function template_changed at 0x000002261BF56D40>, True)].
+(0.000) SELECT "homepage_slide"."id", "homepage_slide"."title", "homepage_slide"."description", "homepage_slide"."image", "homepage_slide"."created", "homepage_slide"."slug" FROM "homepage_slide"; args=(); alias=default
+"GET / HTTP/1.1" 200 7956
+(0.000) SELECT "homepage_slide"."id", "homepage_slide"."title", "homepage_slide"."description", "homepage_slide"."image", "homepage_slide"."created", "homepage_slide"."slug" FROM "homepage_slide"; args=(); alias=default
+"GET / HTTP/1.1" 200 7956
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\urls\resolvers.py", line 702, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'homepage.urls' from 'C:\\Users\\bcamc\\OneDrive\\Desktop\\Python\\projects\\django\\coastlinefab\\homepage\\urls.py'> (None:None) ''>, <URLPattern '' [name='homepage_index']>], [<URLResolver <module 'contact.urls' from 'C:\\Users\\bcamc\\OneDrive\\Desktop\\Python\\projects\\django\\coastlinefab\\contact\\urls.py'> (None:None) 'contact/'>], [<URLResolver <module 'app.urls' from 'C:\\Users\\bcamc\\OneDrive\\Desktop\\Python\\projects\\django\\coastlinefab\\app\\urls.py'> (None:None) 'gallery/'>], [<URLPattern '^accounts/login/$' [name='login']>], [<URLPattern '^logout$' [name='logout']>], [<URLPattern '^media/(?P<path>.*)$'>]], 'path': 'images/myicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\urls\resolvers.py", line 702, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'homepage.urls' from 'C:\\Users\\bcamc\\OneDrive\\Desktop\\Python\\projects\\django\\coastlinefab\\homepage\\urls.py'> (None:None) ''>, <URLPattern '' [name='homepage_index']>], [<URLResolver <module 'contact.urls' from 'C:\\Users\\bcamc\\OneDrive\\Desktop\\Python\\projects\\django\\coastlinefab\\contact\\urls.py'> (None:None) 'contact/'>], [<URLResolver <module 'app.urls' from 'C:\\Users\\bcamc\\OneDrive\\Desktop\\Python\\projects\\django\\coastlinefab\\app\\urls.py'> (None:None) 'gallery/'>], [<URLPattern '^accounts/login/$' [name='login']>], [<URLPattern '^logout$' [name='logout']>], [<URLPattern '^media/(?P<path>.*)$'>]], 'path': 'images/myicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'contact.urls' from 'C:\\Users\\bcamc\\OneDrive\\Desktop\\Python\\projects\\django\\coastlinefab\\contact\\urls.py'> (None:None) 'contact/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\urls\resolvers.py", line 702, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'homepage.urls' from 'C:\\Users\\bcamc\\OneDrive\\Desktop\\Python\\projects\\django\\coastlinefab\\homepage\\urls.py'> (None:None) ''>, <URLPattern '' [name='homepage_index']>], [<URLResolver <module 'contact.urls' from 'C:\\Users\\bcamc\\OneDrive\\Desktop\\Python\\projects\\django\\coastlinefab\\contact\\urls.py'> (None:None) 'contact/'>], [<URLResolver <module 'app.urls' from 'C:\\Users\\bcamc\\OneDrive\\Desktop\\Python\\projects\\django\\coastlinefab\\app\\urls.py'> (None:None) 'gallery/'>], [<URLPattern '^accounts/login/$' [name='login']>], [<URLPattern '^logout$' [name='logout']>], [<URLPattern '^media/(?P<path>.*)$'>]], 'path': 'images/myicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bcamc\miniconda3\envs\djangoenv\Lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'app.urls' from 'C:\\Users\\bcamc\\OneDrive\\Desktop\\Python\\projects\\django\\coastlinefab\\app\\urls.py'> (None:None) 'gallery/'>
+Not Found: /images/myicon.ico
+"GET /images/myicon.ico?v=2 HTTP/1.1" 404 2904
+File C:\Users\bcamc\OneDrive\Desktop\Python\projects\django\coastlinefab\coastlinefab\templates\base.html previous mtime: 1691367592.2965808, current mtime: 1691367604.5735328
+C:\Users\bcamc\OneDrive\Desktop\Python\projects\django\coastlinefab\coastlinefab\templates\base.html notified as changed. Signal results: [(<function template_changed at 0x000002261BF56D40>, True)].
+File C:\Users\bcamc\OneDrive\Desktop\Python\projects\django\coastlinefab\app\templates\layout.html previous mtime: 1691302740.981316, current mtime: 1691367619.0222056
+C:\Users\bcamc\OneDrive\Desktop\Python\projects\django\coastlinefab\app\templates\layout.html notified as changed. Signal results: [(<function template_changed at 0x000002261BF56D40>, True)].
+File C:\Users\bcamc\OneDrive\Desktop\Python\projects\django\coastlinefab\coastlinefab\templates\base.html previous mtime: 1691367604.5735328, current mtime: 1691367623.6969743
+C:\Users\bcamc\OneDrive\Desktop\Python\projects\django\coastlinefab\coastlinefab\templates\base.html notified as changed. Signal results: [(<function template_changed at 0x000002261BF56D40>, True)].
