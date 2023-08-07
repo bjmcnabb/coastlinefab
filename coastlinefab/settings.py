@@ -36,7 +36,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = False
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['0.0.0.0','0.0.0.0:8000','127.0.0.1','localhost','coastlinefab-production.up.railway.app','coastlinefabricators.ca']
+ALLOWED_HOSTS = ['0.0.0.0','0.0.0.0:8000','127.0.0.1','localhost','coastlinefab-production.up.railway.app','.coastlinefabricators.ca']
 INTERNAL_IPS = ('0.0.0.0','127.0.0.1','localhost',)
 
 DEFAULT_AUTO_FIELD='django.db.models.BigAutoField'
