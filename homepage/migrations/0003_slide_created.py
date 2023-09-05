@@ -7,7 +7,7 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('homepage', '0002_rename_thumb_slide_image'),
+        ('homepage', '0002_alter_slide_slug'),
     ]
 
     operations = [

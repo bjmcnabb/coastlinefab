@@ -50,6 +50,7 @@ urlpatterns = [
     
     re_path(r'^accounts/login/$', views.LoginView.as_view(), name='login'),
     re_path(r'^logout$', views.LogoutView.as_view(), { 'next_page': '/', }, name='logout'),
+    re_path(r'^robots\.txt', include('robots.urls')),
 
     # ------
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
