@@ -1,0 +1,227 @@
+html, body {
+	height: 100%;
+	padding: 0px;
+	margin: 0px;
+	max-width: 100%;
+    overflow-x: hidden;
+}
+
+.navbar-nav {
+    float:none;
+    margin:0 auto;
+    display: block;
+    text-align: center;
+    font-size: 1.8em !important;
+    font-family:Harlow Solid !important;
+    color: rgba(0,0,0,1);
+}
+
+.navbar-nav > li {
+    display: inline-block;
+    float:none;
+}
+
+.navbar-nav{
+    font-size: 1.8em !important;
+    }
+
+#page-wrapper {
+	min-height: 0%;
+	margin: 0px;
+}
+
+#main {
+	overflow: auto;
+	padding-bottom: 100px;
+}
+
+#footer {
+	background: #fff;
+	color: #343a40;
+	width: 100%;
+	position: fixed;
+	margin-top: -50px;
+	clear: both;
+}
+
+#section-wrapper{
+	text-align: center;
+	margin: auto;
+}
+
+#section-pic{
+	width: 100%;
+	height: 25vw;
+	border-radius: 0%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#profile-wrapper{
+	text-align: left;
+}
+
+
+#profile-pic{
+	width: 70%;
+	height: 100%;
+	/*border-radius: 50%;*/
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#ul-special{
+	padding: 0;
+	list-style-type: none;
+	font-size: 10pt;
+}
+
+
+.social-links{
+	list-style-type: none;
+	display: block;
+	margin: 5px 0;
+}
+
+.social{
+	width: 25px;
+	height: 25px;
+}
+
+.footer-social{
+	width: 20px;
+	height: 20px;
+}
+
+#header-jumbotron{
+	padding: 10px;
+	text-align: center;
+	border-radius: 0%;
+	/*background-color: rgba(255,255,255,1);*/
+	background-image: url('{% static 'images/checker-plate-2.png' %}');
+}
+
+.card {
+	opacity: 1;
+}
+
+.image-index{
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	left-margin: auto;
+	right-margin: auto;
+
+}
+
+#other-jumbotron{
+	padding: 5px;
+	text-align: left;
+	border-radius: 0%;
+	background-color: rgba(255,255,255,1);
+}
+
+.centering{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.lefting{
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+	justify-content: center;
+}
+
+#project-index-cards{
+	flex-direction: row;
+	margin-bottom: 50px;
+	min-height: 50%;
+	min-width: 450px;
+}
+
+figure {
+    display: table;
+    width: 1px; /* This can be any width, so long as it's narrower than any image */
+}
+figcaption {
+    display: table-row;
+}
+
+#gallery-card{
+	height: 600px;
+}
+
+.gallery-pic{
+	width: 100%;
+	height: 90%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.carousel-size{
+	width: 100%;
+	height: 100%;
+	align-items: middle;
+	justify-content: center;
+}
+
+.carousel-indicators li{
+	bottom: 100px;
+	width: 40px;
+	height: 10px;
+}
+#gallery-wrapper{
+	width: 100%;
+	height: auto;
+	margin: auto;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+#pdf{
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+#code-logo{
+	height: 30px;
+	width: 30px;
+}
+
+.img-hover {
+  filter: url(filters.svg#grayscale);
+  /* Firefox 3.5+ */
+  filter: gray;
+  /* IE6-9 */
+  -webkit-filter: grayscale(1);
+  /* Google Chrome & Safari 6+ */
+}
+.img-hover:hover {
+  filter: none;
+  -webkit-filter: none;
+}
+
+#img-button{
+	position: absolute;
+  	top: 75%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+  	-ms-transform: translate(-50%, -50%);
+  	background-color: #555;
+	color: white;
+	font-size: 16px;
+	padding: 12px 24px;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+#img-button: hover{
+	background-color: black;
+}
