@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     'storages',
+    'robots',
 ]
 
 SITE_ID = 1
