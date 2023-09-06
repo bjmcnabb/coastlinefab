@@ -3,7 +3,6 @@ from django.db import models
 # Create your models here.
 
 import uuid
-from django.db import models
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFit
 
