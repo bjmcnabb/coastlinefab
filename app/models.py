@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*- 
 import uuid
 from django.db import models
+from django.urls import reverse
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFit
 
@@ -15,8 +16,8 @@ class Album(models.Model):
     modified = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(max_length=50, unique=True)
 
-    #def get_absolute_url(self):
-    #    return reverse('album', kwargs={'slug':self.slug})
+    def get_absolute_url(self):
+       return reverse('album', kwargs={'slug':self.slug})
 
     def __unicode__(self):
         return self.title

@@ -32,17 +32,16 @@ admin.autodiscover()
 
 from django.urls import include, path, re_path
 
-# from django.contrib.sitemaps.views import sitemap
-# from coastlinefab.sitemap import coastlinefabsitemap
-
-# sitemaps = {"sitemaps": coastlinefabsitemap()}
+from django.contrib.sitemaps.views import sitemap
+from coastlinefab.sitemap import coastlinefabsitemap
+sitemaps = {"sitemaps": coastlinefabsitemap()}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("homepage.urls")),
     path('contact/', include("contact.urls")),
     path('gallery/', include("app.urls")),
-    # path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="django.contrib.sitemaps.views.sitemap",),
+    path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="django.contrib.sitemaps.views.sitemap",),
     # path('<slug:slug>', gallery.views.AlbumDetail.as_view(), name='album'),
     
 
