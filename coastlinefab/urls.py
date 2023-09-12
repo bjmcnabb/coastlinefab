@@ -36,6 +36,8 @@ from django.contrib.sitemaps.views import sitemap
 from coastlinefab.sitemap import coastlinefabsitemap
 sitemaps = {"sitemaps": coastlinefabsitemap()}
 
+from django.http import HttpResponse
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("homepage.urls")),
@@ -54,7 +56,8 @@ urlpatterns = [
     
     re_path(r'^accounts/login/$', views.LoginView.as_view(), name='login'),
     re_path(r'^logout$', views.LogoutView.as_view(), { 'next_page': '/', }, name='logout'),
-    re_path(r'^robots\.txt', include('robots.urls')),
+    # re_path(r'^robots\.txt', include('robots.urls')),
+    re_path(r'^robots\.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: /*", mimetype="text/plain")),
     
 
     # ------
