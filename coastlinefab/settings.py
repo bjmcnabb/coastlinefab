@@ -200,6 +200,11 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder'
 )
 
+
+# set protocol to HTTPS for production
+SECURE_SSL_REDIRECT=True
+
+
 # -----
 # S3 Bucket Config
 
