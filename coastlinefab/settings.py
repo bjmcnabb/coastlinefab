@@ -200,7 +200,6 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder'
 )
 
-
 # -----
 # S3 Bucket Config
 
