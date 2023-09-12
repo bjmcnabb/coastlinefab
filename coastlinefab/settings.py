@@ -201,10 +201,6 @@ STATICFILES_FINDERS = (
 )
 
 
-# set protocol to HTTPS for production
-SECURE_SSL_REDIRECT=True
-
-
 # -----
 # S3 Bucket Config
 
