@@ -33,7 +33,7 @@ if os.path.isfile(dotenv_file):
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True # set to false later when in production
 
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['0.0.0.0','0.0.0.0:8000','127.0.0.1','localhost','coastlinefab-production.up.railway.app','.coastlinefabricators.ca']
