@@ -229,6 +229,7 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 # STORAGES = {"staticfiles": {"BACKEND": "storages.backends.s3boto3.S3StaticStorage"}}
 
 if os.getcwd() == '/app':
+    CSRF_TRUSTED_ORIGINS = ["https://coastlinefabricators.ca", "https://www.coastlinefabricators.ca"]
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARED_PROTO', 'https')
     SECURE_SSL_REDIRECT = True
     DEBUG = False
