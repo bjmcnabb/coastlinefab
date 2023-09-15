@@ -228,5 +228,7 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 # STORAGES = {"default": {"BACKEND": "storages.backends.s3boto3.S3Boto3Storage"}}
 # STORAGES = {"staticfiles": {"BACKEND": "storages.backends.s3boto3.S3StaticStorage"}}
 
-
-
+if os.getcwd() == '/app':
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARED_PROTO', 'https')
+    SECURE_SSL_REDIRECT = True
+    DEBUG = False
