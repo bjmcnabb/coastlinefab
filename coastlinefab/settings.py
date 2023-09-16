@@ -33,7 +33,7 @@ if os.path.isfile(dotenv_file):
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True # set to false later when in production
+DEBUG = False 
 
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['0.0.0.0','0.0.0.0:8000','127.0.0.1','localhost','coastlinefab-production.up.railway.app','.coastlinefabricators.ca']
@@ -232,4 +232,3 @@ if os.getcwd() == '/app':
     CSRF_TRUSTED_ORIGINS = ["https://coastlinefabricators.ca", "https://www.coastlinefabricators.ca"]
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARED_PROTO', 'https')
     SECURE_SSL_REDIRECT = False
-    DEBUG = False
