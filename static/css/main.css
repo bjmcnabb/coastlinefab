@@ -19,6 +19,20 @@ hr{
 	background-color: rgba(255,255,255,1);
 }
 
+.grid-container {
+  display: grid;
+  /* Creates three columns of equal width using the fraction (fr) unit */
+  grid-template-columns: 1fr 1fr 1fr; 
+  /* Adds a 20px gap between rows and columns */
+  gap: 20px; 
+}
+
+.grid-item {
+  background-color: #3498db;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
 
 .gallery-row {
 	display: flex;
@@ -345,3 +359,4 @@ figcaption {
 #img-button: hover{
 	background-color: black;
 }
+
