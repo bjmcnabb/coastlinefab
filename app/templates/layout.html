@@ -4,6 +4,17 @@
 <html lang="en">
 
 <style>
+  body {}
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('{% static "images/welding-bgd.JPG" %}');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    z-index: -1;
+  }
   @font-face { 
     font-family: 'Harlow-Solid-Italic'; 
     src:local('Harlow-Solid-Italic Regular'),
@@ -22,9 +33,9 @@
 <head>
     <title>Coastline Fabricators</title>
     <!-- <link rel="shortcut icon" href="images/myicon.ico?v=2" type="image/x-icon" /> -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/logo_assets/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/logo_assets/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/logo_assets/favicon-16x16.png' %}">
     <link rel="manifest" href="{% static 'images/site.webmanifest' %}">
 
     <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css">
@@ -45,8 +56,10 @@
 
 </head>
 
+<body> 
+
 <div class="jumbotron" id="header-jumbotron" style="margin-bottom: 0; padding: 0;">
-  <img src="{% static 'images/coastlinefablogo_banner_widened.png' %}" 
+  <img src="{% static 'images/logo_assets/coastlinefablogo_banner_widened.png' %}" 
   style="width: 100%; height: 220px; object-fit: cover; background-size: contain; background-repeat: no-repeat; background-position: center;" alt="">
 </div>
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" style="background-color: rgba(0,0,0,1)!important; line-height: 1.5!important; height: auto!important">
@@ -66,17 +79,26 @@
         </li>
       </ul>
     </div>
+
 </nav> 
 
 
-<!-- <body> -->
-<!-- </body> -->
+<main>
+  {% block styles %}{% endblock %}    
 
-{% block styles %}{% endblock %}    
+  {% block content %}
 
-{% block content %}
+  {% endblock %}
+</main>
 
-{% endblock %}
+<footer id="footer">
+  <div class="row" style="margin-bottom: 0;">
+    <div class='col-sm-12 float-md-left' style="min-width:10%; text-align: center; color: rgba(0,0,0,1);">
+      <div style="font-size: 12px;">Coastline Fabricators &copy;{% now "Y" %}</div>
+    </div>
+  </div>
+</footer>
+
 
 <script src="{% static 'material/js/jquery-2.2.0.js' %}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
@@ -93,13 +115,5 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 
-
-<footer id="footer" class="fixed-bottom">
-  <div class="row" style="margin-bottom: 0px">
-    <div class='col-sm-12 float-md-left' style="min-width:10%; text-align: left; color: rgba(0,0,0,1);">
-      <div style="font-size: 12px;">Coastline Fabricators &copy;{% now "Y" %}</div>
-    </div>
-  </div>
-</footer>
-
+</body>
 </html>

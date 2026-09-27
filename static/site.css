@@ -35,7 +35,7 @@ strong {
     color: darkblue;
 }
 
-/* Materializecss overrrides */
+/* Materialize css overrides */
 .carousel-slider {
     height: 400px !important;
 }
@@ -69,8 +69,12 @@ strong {
     /* height:225px; */
 }
 
-.dpg-album-card, .dpg-album-image {
+/*.dpg-album-card, .dpg-album-image {
     max-width:300px;
+}*/
+
+.dpg-album-card {
+    max-width: 300px;
 }
 
 .dpg-album-card-image-main {
@@ -86,12 +90,12 @@ strong {
     /*max-height:225px;*/
     /* width: auto;
     height: auto; */
-    display: flex;
+    /*display: flex;*/
     /*align-items: stretch;*/
     font-size: 100%;
     margin: 0 auto;
-    margin-bottom: 5%; 
-    min-height: 404px;
+    margin-bottom: 0; 
+    /*min-height: 404px;*/
     min-width: 175px !important;
 }
 
@@ -106,9 +110,35 @@ strong {
 
 .card-title{
   text-align: center;
-  min-height: 100px !important;
-  height: 90%;
+  /*min-height: 100px !important;
+  height: 90%;*/
   justify-content: center !important;
   display: flex;
   align-items: stretch;
+}
+
+.album-gallery {
+    width: 100%;
+}
+
+.album-image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.album-image-grid a {
+    display: block;
+    width: 100%;
+}
+
+.dpg-album-image {
+    display: block;
+    width: 100%;
+    height: auto;
 }

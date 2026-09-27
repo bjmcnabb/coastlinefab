@@ -46,8 +46,11 @@ class AlbumModelAdmin(admin.ModelAdmin):
                     filename = '{0}{1}.jpg'.format(album.slug, str(uuid.uuid4())[-13:])
                     img.image.save(filename, contentfile)
                 
-                    filepath = '{0}/albums/{1}'.format(coastlinefab.settings.MEDIA_ROOT, filename)
-                    with Image.open(filepath) as i:
+                    #filepath = '{0}/albums/{1}'.format(coastlinefab.settings.MEDIA_ROOT, filename)
+                    #with Image.open(filepath) as i:
+                        #img.width, img.height = i.size
+
+                    with Image.open(img.image.path) as i:
                         img.width, img.height = i.size
 
                     img.thumb.save('thumb-{0}'.format(filename), contentfile)
@@ -60,3 +63,7 @@ class AlbumModelAdmin(admin.ModelAdmin):
 class AlbumImageModelAdmin(admin.ModelAdmin):
     list_display = ('alt', 'album')
     list_filter = ('album', 'created')
+
+    def delete_queryset(self, request, queryset):
+        for obj in queryset:
+            obj.delete()

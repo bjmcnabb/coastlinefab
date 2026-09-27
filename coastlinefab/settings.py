@@ -35,8 +35,11 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False 
 
+#IS_PRODUCTION = os.getcwd() == '/app'
+#DEBUG = not IS_PRODUCTION
+
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['0.0.0.0','0.0.0.0:8000','127.0.0.1','localhost','coastlinefab-production.up.railway.app','.coastlinefabricators.ca'] #' coastline-fabricators.onrender.com'
+ALLOWED_HOSTS = ['10.0.0.31','0.0.0.0','0.0.0.0:8000','127.0.0.1','localhost','coastlinefab-production.up.railway.app','.coastlinefabricators.ca'] #' coastline-fabricators.onrender.com'
 INTERNAL_IPS = ('0.0.0.0','127.0.0.1','localhost',)
 
 DEFAULT_AUTO_FIELD='django.db.models.BigAutoField'
@@ -216,14 +219,34 @@ AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 
 # if Django <4.2
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 
 # if Django >=4.2
 # STORAGES = {"default": {"BACKEND": "storages.backends.s3boto3.S3Boto3Storage"}}
 # STORAGES = {"staticfiles": {"BACKEND": "storages.backends.s3boto3.S3StaticStorage"}}
 
-if os.getcwd() == '/app':
-    CSRF_TRUSTED_ORIGINS = ["https://coastlinefabricators.ca", "https://www.coastlinefabricators.ca"]
+#if os.getcwd() == '/app':
+#    CSRF_TRUSTED_ORIGINS = ["https://coastlinefabricators.ca", "https://www.coastlinefabricators.ca"]
+#    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+#    SECURE_SSL_REDIRECT = False
+
+# if Django <4.2
+
+
+if DEBUG is False:
+    # Production / Railway
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+
+    CSRF_TRUSTED_ORIGINS = [
+        "https://coastlinefabricators.ca",
+        "https://www.coastlinefabricators.ca"
+    ]
+
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     SECURE_SSL_REDIRECT = False
+else:
+    # Local development
+    DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+    STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'

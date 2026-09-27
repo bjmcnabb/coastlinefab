@@ -44,22 +44,12 @@ urlpatterns = [
     path('contact/', include("contact.urls")),
     path('gallery/', include("app.urls")),
     path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="django.contrib.sitemaps.views.sitemap",),
-    # path('<slug:slug>', gallery.views.AlbumDetail.as_view(), name='album'),
-    
 
-    # ---NEW---
-    # re_path(r'^$', app.views.gallery, name='gallery'),
-    # re_path(r'^favicon\.ico$', RedirectView.as_view(url='/static/icons/favicon.ico', permanent=True)),
-    # re_path(r'^(?P<slug>[-\w]+)$', app.views.AlbumDetail.as_view(), name='album'), #app.views.AlbumView.as_view()
-    
     # Auth related urls
-    
     re_path(r'^accounts/login/$', views.LoginView.as_view(), name='login'),
     re_path(r'^logout$', views.LogoutView.as_view(), { 'next_page': '/', }, name='logout'),
     re_path(r'^robots\.txt', include('robots.urls')),
-    
 
-    # ------
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

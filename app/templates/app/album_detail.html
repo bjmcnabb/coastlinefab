@@ -3,13 +3,19 @@
 
 {% block styles %}
 <style>
-    body {
-    background: url('{% static "images/welding-bgd.JPG" %}') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size:cover;
-    -o-background-size:cover;
+    body {}
+    body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('{% static "images/welding-bgd.JPG" %}');
+    background-repeat: no-repeat;
+    background-position: center center;
     background-size: cover;
-    }   
+    z-index: -1;
+    }
+
+
 </style>
 {% endblock %}
 
@@ -19,35 +25,44 @@
 {% endblock %}
 
 {% block content %}
-<div class="jumbotron centering" id="other-jumbotron" style="opacity: 1; background-color: rgba(255,255,255,0.8); margin: 0">
+<div class="jumbotron centering album-content" style="opacity: 1; background-color: rgba(255,255,255,0.9); margin: 0">
     {% if album.is_visible %}
-        <div class="row d-block">
+        <div class="row d-block" style="margin-left: 0; margin-right: 0;">
             <header class="row s6 m12 l10 offset-l1" style="text-align: center; justify-content: center;">
                 <h1>{{ album.title }}</h1>
             </header>
-        </div>
-        <article class="row d-block">
-            <section class="row s6 m12 l10 offset-l1" style="text-align: center; justify-content: center;">
+            <section class="row s6 m12 l10 offset-l1" style="text-align: center; justify-content: center; padding-left: 5%; padding-right: 5%;">
                 <p>{{ album.description }}</p>
             </section>
-        </article>
+        <div class="row d-block" style="margin-left: 0; margin-right: 0;">
+            <section class="row s6 m12 l10 offset-l1" style="text-align: center; justify-content: center;">
+                <a class="btn btn-outline-dark" href="{% url 'gallery' %}" role="button">Back to main gallery</a>
+            </section>
+        </div>
+        </div>
         <article class="row d-block">
-            <section class="row s6 m12 l10 offset-l1">
-                <div class="container center" >
+            <!--<section class="row s6 m12 l10 offset-l1">
+                <div class="container center" style="">
                     {% for item in images %}
                     <a  href="javascript:pswpInit({{ forloop.counter0 }});">
                         <img src="{{ item.thumb.url }}" class="responsive-img dpg-album-image" alt="{{ item.alt }}" />
                     </a>
                     {% endfor %}
                 </div>
+            </section>-->
+            <section class="album-gallery">
+                <div class="album-image-grid">
+                    {% for item in images %}
+                        <a href="javascript:pswpInit({{ forloop.counter0 }});">
+                            <img src="{{ item.thumb.url }}"
+                                 class="dpg-album-image"
+                                 alt="{{ item.alt }}">
+                        </a>
+                    {% endfor %}
+                </div>
             </section>
         </article>
-        <!-- < div class="row">
-            <footer class="col s6 m12 l10 offset-l1">
-                Created on <time datetime="{{ album.created|date:"Y-m-d" }}">{{ album.created|date:"d M Y" }}</time>
-                <p>Tags: {{ album.tags }}</p>
-            </footer>
-        </div> -->
+
 
         <!-- PhotoSwipe -->
         <!-- Root element of PhotoSwipe. Must have class pswp. -->
@@ -120,7 +135,7 @@
         <h3>This album is temporarily unavailable.</h3>
     {% endif %}
 </div>
-<div class="jumbotron lefting" id="other-jumbotron" style="opacity: 1; background-color: rgba(255,255,255,0.8);">
+<div class="jumbotron lefting album-footer" style="margin-bottom: 0; opacity: 1; background-color: rgba(255,255,255,0.8);">
     <div class="row" style="margin: 0">
         <footer class="col s6 m12 l10 offset-l1">
             Created on <time datetime="{{ album.created|date:"Y-m-d" }}">{{ album.created|date:"d M Y" }}</time>

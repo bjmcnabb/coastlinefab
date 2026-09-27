@@ -1,62 +1,234 @@
-@font-face { 
-    font-family: 'Harlow-Solid-Italic'; 
-    src:local('Harlow-Solid-Italic Regular'),
-        local('Harlow-Solid-Italic'), 
-        url({% static 'admin/fonts/Harlow-Solid-Italic.ttf.woff' %}) format('truetype');
-    } 
-
 html, body {
-	height: 100%;
 	/*padding: 0px;*/
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, 'Harlow-Solid-Italic';
-	margin: 0px;
+	margin: 0;
+    padding: 0;
 	max-width: 100%;
-	overflow: none!important;
-    /*overflow-x: hidden;*/
+	min-height: 100%;
 }
 
 hr{
 	background-color: rgba(255,255,255,1);
 }
 
+body p{
+	font-size: clamp(0.5rem, 3.35vw + 0.2rem, 1.35rem);
+}
+
+
+
+.album-content {
+    flex: 1;
+    margin-bottom: 0 !important;
+    min-height: 650px;
+}
+
+.album-footer {
+    flex-shrink: 0;
+}
+
 .grid-container {
   display: grid;
   /* Creates three columns of equal width using the fraction (fr) unit */
-  grid-template-columns: 1fr 1fr 1fr; 
+  /* grid-template-columns: 1fr 1fr 1fr; 
   /* Adds a 20px gap between rows and columns */
   gap: 20px; 
+  /* Creates column tracks that shrink down to 280px minimum or fill available space */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-rows: auto;
+  margin: min(10vw, 20px);
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .image-row {
+    	flex-direction: column;
+    	gap: 5px;
+  	}
+
+    .mobile-arrow {
+    	transform: rotate(90deg);
+  	}
 }
 
 .grid-item {
-  background-color: #3498db;
   color: white;
-  padding: 20px;
+  padding: 0;
   text-align: center;
+  /*overflow: hidden;*/
+  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column; /* Stacks image and content vertically */
 }
 
-.gallery-row {
-	display: flex;
-	align-items: stretch;
-	/* justify-content: space-between; */
-	justify-content: center;
+.grid-item-pop-out {
+  color: white;
+  padding: 0;
+  text-align: center;
+  /*overflow: hidden;*/
+  display: flex;
+  flex-direction: column; /* Stacks image and content vertically */
+
+  transition: transform 0.3s ease-out;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-radius: 15px;
+}
+
+.grid-item-pop-out:hover {
+  transform: scale(1.25); /* Pops outwards */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Deepens shadow for depth */
+}
+
+.grid-item-pop-out .gallery-pic {
+  width: 100%;          /* Forces the image to take up full width of the card */
+  height: auto;         /* Allows height to behave naturally with aspect ratio */
+  object-fit: cover;    /* Cuts off the edges cleanly instead of squishing them */
+  display: block;       /* Removes unwanted inline spacing beneath the image */
+  border-radius: 15px;
+}
+
+.grid-item img {
+  width: 100%;
+  object-fit: cover; /* Keeps image proportions from distorting */
+  display: block;
+  min-height: 0;
+  border-radius: 15px;	
+}
+
+.grid-item p {
+  border-radius: 15px;
+  margin: 0;
+  grid-column: 1 / -1;
+}
+
+.assigned-grid-container {
+  display: grid;
+  gap: 10px; 
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: auto;
+  margin: min(10vw, 20px);
+  position: relative;
+  padding-bottom: 10px;
+  border-radius: 15px;
+}
+
+.assigned-grid-item {
+    padding: 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.assigned-grid-item img {
+    display: block;
+    width: 100%;
+    height: auto;              
+    object-fit: contain;       
+    border-radius: 15px;
+}
+
+.assigned-grid-container-mobile {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+  margin: 20px;
+  align-items: stretch;
+}
+
+.image-row-mobile {
+  display: flex;
+  align-items: center; /* keeps arrow vertically centered */
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+
+.assigned-grid-item-mobile {
 	width: 100%;
+    height: auto;              
+    object-fit: contain;       
+    border-radius: 15px;
+    padding: 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.gallery-col {
-	flex: 1;	
-  	flex-basis: 40%;
-  	margin-left: 5px;
-  	margin-right: 5px;
-  	/*box-sizing: border-box;*/
+.assigned-grid-item-mobile img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.image-arrow {
+    align-self: center;
+    justify-self: center;
+    z-index: 10;
+    padding: 0;
+    margin: 0;
+    /*font-size: 80px;*/
+    font-size: clamp(1rem, 6vw, 8rem);
+    line-height: 1;
+    color: gray;
+    -webkit-text-stroke: 2px black; /* border thickness and color */
+  	text-stroke: 2px black; /* for broader browser support */
+}
+
+#homepage-content-wrapper {
+	width: 100%;
+    margin: 0;
+    text-align: center;
+	align-items: center;
+	justify-content: center;
+	padding-top: 0;
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 25px;
+}
+
+.homepage-content {
+	color: rgba(255,255,255,1); 
+	text-align: center;
+	justify-content: center;
+	margin-bottom: 0;
+	padding: 5px;
+	padding-left: 10px;
+	padding-bottom: 0;
 }
 
 .gallery-container {
-	max-width: 40%; 
-	margin:0 auto;
-	justify-content: center;
-	align-items: center;
-	flex-flow: row wrap;
+  	display: grid;
+   /* Creates three columns of equal width using the fraction (fr) unit */
+   /* grid-template-columns: 1fr 1fr 1fr; 
+   /* Adds a 20px gap between rows and columns */
+   gap: 20px; 
+   /* Creates column tracks that shrink down to 280px minimum or fill available space */
+   grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+   grid-template-rows: auto;
+   margin: min(10vw, 20px);
+   justify-content: center;
+   align-items: center;
+	
+}
 
+.gallery-row {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  /*overflow: hidden;*/
+  display: flex;
+  flex-direction: column; /* Stacks image and content vertically */
+  max-width: 300px;
+}
+
+.gallery-col {
+	margin-left: 0;
+	margin-right: 0;
+	justify-content: center;
 }
 
 .gallery-card-title {
@@ -66,7 +238,6 @@ hr{
 	justify-content: center;
 	align-content: center;
 }
-
 
 .navbar-nav {
     float:none;
@@ -78,6 +249,7 @@ hr{
     /*background-color: #000000 !important; */
     /* background-color: #e74c3c !important; */
     /* font-family:'Harlow-Solid-Italic' !important; */
+}
 
 .navbar-nav > li {
     display: inline-block;
@@ -93,25 +265,14 @@ hr{
     padding-left: 10px  !important;
 }
 
-/*This is modifying the btn-primary colors but you could create your own .btn-something class as well*/
+
 .nav-link:hover {
     color: #FFFFFF !important;
 }
 
-#page-wrapper {
-	min-height: 0%;
-	margin: 0px;
-}
-
-#main {
-	/*overflow: auto;*/
-	padding-bottom: 100px;
-}
 
 #footer {
 	background: rgba(255,255,255,0);
-	/*color: #343a40;*/
-	/*color: rgba(255,255,255,1);*/
 	font-size: 12px;
 	width: 100%;
 	position: fixed;
@@ -121,89 +282,35 @@ hr{
    	bottom:0px;
 }
 
-#section-wrapper{
-	text-align: center;
-	margin: auto;
-}
-
-#section-pic{
-	width: 100%;
-	height: 25vw;
-	border-radius: 0%;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-#profile-wrapper{
-	text-align: left;
-}
-
-
-#profile-pic{
-	width: 70%;
-	height: 100%;
-	/*border-radius: 50%;*/
-	margin-left: auto;
-	margin-right: auto;
-}
-
-#ul-special{
-	padding: 0;
-	/*list-style-type: none;*/
-	font-size: 10pt;
-}
-
-
-.social-links{
-	/*list-style-type: none;*/
-	display: block;
-	margin: 5px 0;
-}
-
-.social{
-	width: 25px;
-	height: 25px;
-}
-
-.footer-social{
-	width: 20px;
-	height: 20px;
-}
 
 #header-jumbotron{
 	padding: 10px;
 	text-align: center;
 	border-radius: 0%;
-	/*background-color: rgba(255,255,255,1);*/
 	background-image: url('{% static 'images/checker-plate-2.png' %}');
 }
 
-.card {
-	opacity: 1;
-}
 
 .image-index{
 	width: 100%;
 	height: 100%;
 	padding: 0;
-	left-margin: auto;
-	right-margin: auto;
+	margin-left: auto;
+	margin-right: auto;
 
 }
 
+
 #other-jumbotron{
 	margin-bottom: 0 !important;
-	padding: 5px;
 	text-align: left;
 	border-radius: 0%;
 }
 
+
 .centering{
-	display: flex;
-	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	opacity: 0.5;
 }
 
 .lefting{
@@ -213,30 +320,8 @@ hr{
 	justify-content: left;
 }
 
-#project-index-cards{
-	flex-direction: row;
-	margin-bottom: 50px;
-	min-height: 50%;
-	min-width: 450px;
-}
-
-figure {
-    display: table;
-    width: 1px; /* This can be any width, so long as it's narrower than any image */
-}
-figcaption {
-    display: table-row;
-}
-
-#gallery-card{
-	max-height: 600px;
-	width: auto;
-	height: auto;
-}
 
 .gallery-pic{
-	max-width: 230 px;
-	max-height: 100 px;
 	width: auto;
 	height: auto;
 	display: block;
@@ -244,34 +329,36 @@ figcaption {
 	margin-left: auto;
 }
 
+.album-card-link {
+    display: block;
+    text-decoration: none;
+    color: black;
+    justify-content: center;
+}
+
+.album-card-link .card-action {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center;
+    text-align: center;
+}
+
+.album-card-link .card-action span {
+    margin: 0;
+}
+
+.album-card-link:hover {
+    text-decoration: none;
+    color: inherit;
+}
 
 .carousel-size{
-	max-width: 230 px;
-	max-height: 100 px;
+	max-width: 230px;
+	max-height: 100px;
 	width: auto;
 	height: auto;
 	align-items: middle !important;
 	justify-content: center !important;
-}
-
-
-#carousel-container {
-    margin: auto auto;
-    /*max-width: 2000px;*/
-}
-
-.carousel-indicators li{
-/*	bottom: 100px;
-	width: 40px;
-	height: 10px;*/
-}
-
-.carousel-control-prev {
-  margin-left: -10%;
-}
-
-.carousel-control-next {
-  margin-right: -10%;
 }
 
 @media screen and (max-width: 979px) {
@@ -297,48 +384,7 @@ figcaption {
 	text-align: center;
 	align-items: center;
 	justify-content: center;
-	margin-left: 0;
-	margin-right: 0;
-}
-
-#pdf{
-	padding-left: 10%;
-	padding-right: 10%;
-}
-
-#code-logo{
-	height: 30px;
-	width: 30px;
-}
-
-.img-hover {
-  filter: url(filters.svg#grayscale);
-  /* Firefox 3.5+ */
-  filter: gray;
-  /* IE6-9 */
-  -webkit-filter: grayscale(1);
-  /* Google Chrome & Safari 6+ */
-}
-
-.img-hover:hover {
-  filter: none;
-  -webkit-filter: none;
-}
-
-.image img {
-    -webkit-transition: all 1s ease; /* Safari and Chrome */
-    -moz-transition: all 1s ease; /* Firefox */
-    -ms-transition: all 1s ease; /* IE 9 */
-    -o-transition: all 1s ease; /* Opera */
-    transition: all 1s ease;
-}
-
-.image:hover img {
-    -webkit-transform:scale(1.25); /* Safari and Chrome */
-    -moz-transform:scale(1.25); /* Firefox */
-    -ms-transform:scale(1.25); /* IE 9 */
-    -o-transform:scale(1.25); /* Opera */
-     transform:scale(1.25);
+	margin: 0 auto;
 }
 
 #img-button{
@@ -356,7 +402,6 @@ figcaption {
 	border-radius: 5px;
 }
 
-#img-button: hover{
+#img-button:hover{
 	background-color: black;
 }
-

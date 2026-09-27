@@ -3,50 +3,82 @@
 
 {% block styles %}
 <style>
-    body {
-    background: url('{% static "images/welding-bgd.JPG" %}') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size:cover;
-    -o-background-size:cover;
+    body {}
+    body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('{% static "images/welding-bgd.JPG" %}');
+    background-repeat: no-repeat;
+    background-position: center center;
     background-size: cover;
-    }   
+    z-index: -1;
+    } 
 </style>
 {% endblock %}
 
 {% block content %}
 
-<div class="jumbotron centering" id="other-jumbotron" style="background-color: rgba(255,255,255,0.8);">
+<div class="jumbotron centering" id="other-jumbotron" style="background-color: rgba(255,255,255,0.9);">
+    <div>
+        <p class="homepage-content" style="padding-left: 20px; padding-right: 20px; padding-bottom: 30px; color: rgba(0,0,0,1);">Select a category below to browse pictures of different projects we have completed. Not finding what you are looking for? <a style="" href="{% url 'contact' %}">Inquiries and quote requests are welcome!</a></p>
+    </div>
     <div class="gallery-container">
-        <div class="gallery-row" style="justify-content: center">
+        {% for album in albums|dictsort:"title" %}
+        <div class="gallery-col">
+            <a class="album-card-link" href="{% url 'album' album.slug %}">
+                <div class="card dpg-album-card-main" style="box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.3); ">
+                    <div class="card-image">
+                        <img src="{{ album.thumb.url }}"
+                             alt="{{ album.title }}"
+                             class="dpg-album-card-image-main" style="width: 100%; object-fit: cover;">
+                    </div>
+
+                    <div class="card-content">
+                        <span class="card-title" style="font-weight: bold;  color: black;">
+                            {{ album.title }}
+                        </span>
+                    </div>
+
+                    <div class="card-action" style="font-weight: bold; justify-items: center;">
+                        
+                        <span>More Images</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+    </div>
+        <!--
+        <div class="gallery-row" style="">
             {% for album in albums|dictsort:"title" %}
-                <div class="gallery-col s3 m3 ">
-                    <div class="card dpg-album-card-main">
-                        <div class=" card-image">
-                            <img src="{{ album.thumb.url }}" alt="{{ album.title }}" class="dpg-album-card-image-main" style="width: 100%; max-height: 300px; object-fit: cover;"/>
+                <div class="gallery-col s3 m3" style="">
+                    <div class="card dpg-album-card-main" style=""> 
+                        <div class=" card-image" style="">
+                            <img src="{{ album.thumb.url }}" alt="{{ album.title }}" class="dpg-album-card-image-main" style="width: 100%; object-fit: cover;"/>
                         </div>
                         <div class="card-content">
                             <span class="card-title" style="font-weight: bold; min-height: 65px;">{{ album.title }}</span>
-                            <!-- <p>{{ album.description|truncatechars:120 }}</p> -->
                         </div>
                         <div class="card-action" style="font-weight: bold;">
                             <a href="{% url 'album' album.slug %}">More Images</a>
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:"2" and not forloop.last %}
+                {% if forloop.counter|divisibleby:"1" and not forloop.last %} -->
                 <!-- every 3rd item: close the initial row, and start a new one -->
-                </div>
-                <div class="gallery-row" style="justify-content: center">
-                {% endif %}
+                <!-- </div>
+        <div class="gallery-row" style="justify-content: center">
+            {% endif %}
                 {% if forloop.last %}
-                    {% if forloop.counter|divisibleby:"2" %}
+                    {% if forloop.counter|divisibleby:"1" %} -->
                         <!-- on the last iteration, if a full row is complete, close the last row made -->
-                        </div>
+                        <!-- </div>
                     {% endif %}
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
+                {% endif %} 
+            {% endfor %} -->
+            
+</div>
     <div class="pagination center">
         <span class="step-links">
             {% if albums.has_previous %}
@@ -58,5 +90,4 @@
             {% endif %}
         </span>
     </div>
-</div>
 {% endblock %}

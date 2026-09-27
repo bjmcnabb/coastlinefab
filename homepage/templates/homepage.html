@@ -5,19 +5,26 @@
 {% block styles %}
 
 <style>
-	body {
-	background: url('{% static "images/welding-bgd.JPG" %}') no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size:cover;
-	-o-background-size:cover;
-	background-size: cover;
+	body {}
+	body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('{% static "images/welding-bgd.JPG" %}');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    z-index: -1;
 	}
+
 	@font-face { 
     font-family: 'Harlow-Solid-Italic'; 
     src:local('Harlow-Solid-Italic Regular'),
         local('Harlow-Solid-Italic'), 
         url({% static 'admin/fonts/Harlow-Solid-Italic.ttf.woff' %}) format('truetype');
     } 
+
+    
 </style>
 
 {% endblock %}
@@ -34,13 +41,13 @@
 <br>
 <br>
 <br>
-<br>
+<!-- Summary -->
 <div class="jumbotron centering" id="other-jumbotron" style="background-color: rgba(52,58,64,0);">
 	<div class='col-sm-8' style="padding-left: 0; padding-right: 0; margin: auto; background-color: rgba(0,0,0,0.7);">
 		<hr>			
-		<p style="padding-left: 20px; padding-right: 20px; font-size: 18; color: rgba(255,255,255,1);">Coastline fabricators has been serving the Comox Valley and greater Vancouver Island for the past 20+ years.</p>
-		<p style="padding-left: 20px; padding-right: 20px; font-size: 18; color: rgba(255,255,255,1);">Specializing in marine aluminum and steel fabrication, we service a wide variety of applications tailored to individual client's needs (<a style="color: #86aef8" href="{% url 'gallery' %}">Gallery</a>).</p>
-		<p style="padding-left: 20px; padding-right: 20px; font-size: 18; color: rgba(255,255,255,1);">For inquiries, quotes, or material sales, please <a style="color: #86aef8" href="{% url 'contact' %}">contact us</a>.</p>
+		<p class="homepage-content" style="padding-left: 20px; padding-right: 20px; font-size: 18; color: rgba(255,255,255,1);">Coastline fabricators specializes in marine aluminum and steel fabrication, and has been serving the Comox Valley and greater Vancouver Island for the past 30+ years.</p>
+		<br>
+		<p class="homepage-content" style="padding-left: 20px; padding-right: 20px; font-size: 18; color: rgba(255,255,255,1);">For inquiries, quotes, or material sales, please <a style="color: #86aef8" href="{% url 'contact' %}">contact us</a>.</p>
 		<hr>		
 	</div>
 </div>
@@ -50,16 +57,206 @@
 <br>
 <br>
 <br>
-<div class="jumbotron" id="gallery-wrapper" style="padding-bottom: 0;background-color: rgba(0,0,0,0.9); padding-top: 0.5%">
+
+
+<!-- Diverse projects -->
+<div class="jumbotron" id="homepage-content-wrapper" style="background-color: rgba(0,0,0,1);">
+	<div style="">
+		<h1 class="homepage-content" style="font-family:Harlow-Solid-Italic;">Have an idea? We'll make it happen</h1>
+		<hr style="margin-left: 5%; margin-right: 5%;">
+	</div>
+	
+	<div style="margin: min(10vw, 30px)">
+		<p class="homepage-content" style="padding-left: 5vw; padding-right: 5vw;">We service a wide variety of applications for our clients that extend beyond marine applications. We take pride in materializing our client's visions to their specifications. If you have a design, or even just a concept in mind, we can work with you to bring it to life.</p>
+		<br>
+		<p class="homepage-content" style="">For more examples of our products, please see the&nbsp;<a style="color: #86aef8; display: inline;" href="{% url 'gallery' %}">gallery</a>.</p>
+	</div>
+
+	<div class="grid-container" style="padding: 10px;">
+	  <div class="grid-item-pop-out" style="padding: 0; background-color: rgba(0,0,0,1);">
+	  	<img class="img-fluid gallery-pic" src='{% static "images\homepage_photos\IMG_0641.JPG"%}' alt="" style="aspect-ratio: 4 / 3">
+	  	<p>ATV rack</p>
+	  </div>
+
+	  <div class="grid-item-pop-out" style="padding: 0; background-color: rgba(0,0,0,1);">
+	  	<img class="img-fluid gallery-pic" src='{% static "images\homepage_photos\IMG_0454.JPG"%}' alt="" style="aspect-ratio: 4 / 3">
+	  	<p>Kayak rack</p>
+	  </div>
+
+	  <div class="grid-item-pop-out" style="padding: 0; background-color: rgba(0,0,0,1);">
+	  	<img class="gallery-pic" src='{% static "images\homepage_photos\IMG_1403.JPG"%}' alt="" style="aspect-ratio: 4 / 3">
+	  	<p>Truck bed rack</p>
+	  </div>
+
+	  <div class="grid-item-pop-out" style="padding: 0; background-color: rgba(0,0,0,1);">
+	  	<img class="img-fluid gallery-pic" src='{% static "images\homepage_photos\IMG_1986.JPG"%}' alt="" style="aspect-ratio: 4 / 3">
+	  	<p>Golf ball cleaning rack</p>
+	  </div>
+
+	  <div class="grid-item-pop-out" style="padding: 0; background-color: rgba(0,0,0,1);">
+	  	<img class="img-fluid gallery-pic" src='{% static "images\homepage_photos\IMG_2052.JPG"%}' alt="" style="aspect-ratio: 4 / 3">
+	  	<p>Dog transport box</p>
+	  </div>
+	  	
+	  <div class="grid-item-pop-out" style="padding: 0; background-color: rgba(0,0,0,1);">
+	  	<img class="img-fluid gallery-pic" src='{% static "images\homepage_photos\IMG_2078.JPG"%}' alt="" style="aspect-ratio: 4 / 3">
+	  	<p>Park benches</p>
+	  </div>
+
+	  <div class="grid-item-pop-out" style="padding: 0; background-color: rgba(0,0,0,1);">
+	  	<img class="img-fluid gallery-pic" src='{% static "images\homepage_photos\IMG_2110.JPG"%}' alt="" style="aspect-ratio: 4 / 3">
+	  	<p>Helicopter wheelchair accessibility lift</p>
+	  </div>
+
+	  <div class="grid-item-pop-out" style="padding: 0; background-color: rgba(0,0,0,1);">
+	  	<img class="img-fluid gallery-pic" src='{% static "images\homepage_photos\IMG_1888.JPG"%}' alt="" style="aspect-ratio: 4 / 3">
+	  	<p>Mock car for firefighter training</p>
+	  </div>
+
+	  <div class="grid-item-pop-out" style="padding: 0; background-color: rgba(0,0,0,1);">
+	  	<img class="img-fluid gallery-pic" src='{% static "images\homepage_photos\IMG_1376.JPG"%}' alt="" style="aspect-ratio: 4 / 3">
+	  	<p>Racecar roll cage</p>
+	  </div>
+
+	  <div class="grid-item-pop-out" style="padding: 0; background-color: rgba(0,0,0,1);">
+	  	<img class="img-fluid gallery-pic" src='{% static "images\homepage_photos\IMG_0216.JPG"%}' alt="" style="aspect-ratio: 4 / 3">
+	  	<p>Animal control dog crates</p>
+	  </div>
+
+	  <div class="grid-item-pop-out" style="padding: 0; background-color: rgba(0,0,0,1);">
+	  	<img class="img-fluid gallery-pic" src='{% static "images\homepage_photos\utility_trailer.JPG"%}' alt="" style="aspect-ratio: 4 / 3">
+	  	<p>Utility trailer (boat trailer in background)</p>
+	  </div>
+
+	  <div class="grid-item-pop-out" style="padding: 0; background-color: rgba(0,0,0,1);">
+	  	<img class="img-fluid gallery-pic" src='{% static "images\homepage_photos\IMG_1820.JPG"%}' alt="" style="">
+	  	<p>Staircase</p>
+	  </div>
+	</div>
+</div>
+
+
+<!-- Repair services -->
+<div class="jumbotron" id="homepage-content-wrapper" style="background-color: rgba(255,255,255,1);">
+	<div style="">
+		<h1 class="homepage-content" style="font-family:Harlow-Solid-Italic; color: rgba(0,0,0,1);">Repair Services</h1>
+		<hr style="background-color: black; margin-left: 5%; margin-right: 5%;">
+	</div>
+
+	<div class="assigned-grid-container-mobile" style="">
+		<div class="grid-item" style="justify-content: center;">
+			<br>
+			<p class="homepage-content" style="color: rgba(0,0,0,1); vertical-align: center;">Damaged boat hull? Cracked or punctured motor? We can patch up your equipment* and get it functioning again at a fraction of the cost charged by manufacturers for service or replacement.</p>
+			<br>
+			<br>
+			<p class="homepage-content" style="color: rgba(0,0,0,1); font-style: italic;">*Services are primarily for aluminum products. Steel servicing is possible;&nbsp;<a style="color: #86aef8; display: inline;" href="{% url 'contact' %}">contact us</a>&nbsp;for a consultation.</p>
+			<br>
+		</div>
+
+	<div id="carousel-container" style="border-radius: 15px; box-shadow: 12px 12px 6px rgba(0, 0, 0, 0.3);">
+		<div id="repairsCarousel" class="carousel carousel-dark slide carousel-fade" data-ride="carousel" data-interval="2000" style="max-width: 100%; width: auto; height: auto; margin: auto">
+			<ol class="carousel-indicators">
+				{% for repairslide in repairslides|dictsort:"created" %}
+					{% if forloop.first %}
+						<li data-target="#repairsCarousel" data-slide-to="{{forloop.counter0}}" class="active"></li>
+					{% else %}
+						<li data-target="#repairsCarousel" data-slide-to="{{forloop.counter0}}"></li>
+					{% endif %}
+				{% endfor %}
+			</ol>
+			<div class="carousel-inner">
+				{% for repairslide in repairslides|dictsort:"created" %}
+					{% if forloop.first %}
+						<div class="carousel-item active text-center">
+					{% else %}
+						<div class="carousel-item text-center">
+					{% endif %}
+					<img class="grid-item-pop-out" src="{{repairslide.image.url}}" alt="" style="width: 100%;  max-width: 500; max-height: 500px; object-fit: cover;">
+					</div>
+				{% endfor %}
+			</div>
+
+			<a class="carousel-control-prev" href="#repairsCarousel" role="button" data-slide="prev" style="color: rgba(255,255,255,1);">
+			<span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(1);"></span>
+			<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#repairsCarousel" role="button" data-slide="next" >
+			<span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(1);"></span>
+			<span class="sr-only">Next</span>
+			</a>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+
+<!-- Portable Services -->
+<div class="jumbotron" id="homepage-content-wrapper" style="background-color: rgba(0,0,0,1);">
+	<div style="">
+		<h1 class="homepage-content" style="font-family:Harlow-Solid-Italic;">Portable Services & Installation</h1>
+		<hr style="margin-left: 5%; margin-right: 5%;">
+	</div>
+	
+	<div class="grid-container" style="display: flex; flex-wrap: wrap; justify-content: center;">
+		<div style="max-width: 500px; overflow: hidden; border-radius: 15px; ">
+			<div class="grid-item-pop-out" style="max-width: 500px;">
+				<img class="img-fluid gallery-pic" src='{% static "images\homepage_photos\IMG_0402.JPG"%}' alt="" style="">
+			</div>
+		</div>
+		
+
+		<div class="grid-item" style="justify-content: center; max-width: 500px;">
+			<br>
+			<p class="homepage-content" style="">Coastline fabricators are fully equipped to bring our welding services to you. We offer portable repairs and installations where you need it, whether that is at a marina, your buisness, or your home. </p>
+			<br>
+		</div>
+
+		<div style="max-width: 500px; overflow: hidden; border-radius: 15px; ">
+			<div class="grid-item-pop-out" style="max-width: 500px;">
+				<img class="img-fluid gallery-pic" src='{% static "images\homepage_photos\IMG_2096.JPG"%}' alt="" style="">
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<!-- Material Sales -->
+<div class="jumbotron" id="homepage-content-wrapper" style="background-color: rgba(255,255,255,1);">
+	<div style="">
+		<h1 class="homepage-content" style="font-family:Harlow-Solid-Italic; color: rgba(0,0,0,1);">Material Sales</h1>
+		<hr style="background-color: black; margin-left: 5%; margin-right: 5%;">
+	</div>
+
+	<div class="grid-container" style="padding-bottom: 10px; grid-template-columns: 1fr;">
+		<div class="grid-item" style="grid-row: 1;">
+			<br>
+			<p class="homepage-content" style="color: rgba(0,0,0,1); font-size: 18; text-align: center;">Looking for material for a DIY project? Bulk or precut aluminum is also available to purchase.</p>
+			<br>
+		</div>
+
+		<div style="overflow: hidden; border-radius: 15px; box-shadow: 12px 12px 6px rgba(0, 0, 0, 0.3);">
+			<div class="grid-item-pop-out" style="border-radius: 15px; grid-row: 2; padding: 0;">
+		  		<img class="img-fluid gallery-pic" src='{% static "images\homepage_photos\material_rack.JPG"%}' alt="" style="min-height: 150px;">
+		  	</div>
+	  	</div>
+	</div>
+</div>
+
+
+<!-- Featured Projects -->
+<div class="jumbotron" id="gallery-wrapper" style="padding-bottom: 0;background-color: rgba(0,0,0,1); padding-top: 0.5%">
 	<h1 style="text-align: center; font-family:Harlow-Solid-Italic; color: rgba(255,255,255,1)">Featured Projects</h1>
+	<hr style="margin-left: 5%; margin-right: 5%;">
 	<div id="carousel-container">
-		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="max-width: 100%; width: auto; height: auto; margin: auto">
+		<div id="featuredProjectsCarousel" class="carousel slide" data-ride="carousel" style="max-width: 100%; width: auto; height: auto; margin: auto">
 			<ol class="carousel-indicators">
 				{% for slide in slides|dictsort:"created" %}
 					{% if forloop.first %}
-						<li data-target="#carouselExampleIndicators" data-slide-to="{{forloop.counter0}}" class="active"></li>
+						<li data-target="#featuredProjectsCarousel" data-slide-to="{{forloop.counter0}}" class="active"></li>
 					{% else %}
-						<li data-target="#carouselExampleIndicators" data-slide-to="{{forloop.counter0}}"></li>
+						<li data-target="#featuredProjectsCarousel" data-slide-to="{{forloop.counter0}}"></li>
 					{% endif %}
 				{% endfor %}
 			</ol>
@@ -75,11 +272,11 @@
 				{% endfor %}
 			</div>
 
-			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" >
+			<a class="carousel-control-prev" href="#featuredProjectsCarousel" role="button" data-slide="prev" >
 			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 			<span class="sr-only">Previous</span>
 			</a>
-			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" >
+			<a class="carousel-control-next" href="#featuredProjectsCarousel" role="button" data-slide="next" >
 			<span class="carousel-control-next-icon" aria-hidden="true"></span>
 			<span class="sr-only">Next</span>
 			</a>

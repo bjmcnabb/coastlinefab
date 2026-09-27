@@ -5,12 +5,16 @@
 {% block styles %}
 
 <style>
-	body {
-	background: url('{% static "images/welding-bgd.JPG" %}') no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size:cover;
-	-o-background-size:cover;
-	background-size: cover;
+	body {}
+	body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('{% static "images/welding-bgd.JPG" %}');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    z-index: -1;
 	}
 	table {
 		font-family: arial, sans-serif;
@@ -52,7 +56,7 @@
 <body>
 
 <!-- <div class="jumbotron centering" id="other-jumbotron" style="opacity: 1; background-color: rgba(52,58,64,0.9);"> -->
-<div class="jumbotron centering" id="other-jumbotron" style="background-color: rgba(0,0,0,0.8);">
+<div class="jumbotron centering" id="other-jumbotron" style="background-color: rgba(0,0,0,0.7);">
 		<div class='col-sm-12' style="margin: auto; justify-content: center; align-items: center; text-align: center">
 			<!-- <hr> -->
 			<div class='row-sm-12' style="margin: auto;  justify-content: center">			
@@ -126,7 +130,7 @@
 			        to.parentNode.insertBefore(s, to);
 			      })();</script><a href="https://1map.com/map-embed" style="width: 100%;">1 Map</a></div>
 		<hr>	
-		<p style="font-size: 14; color: rgba(255,255,255,1)">Web design by <a style="color: #86aef8" href="https://github.com/bjmcnabb" target="_blank" rel="noopener noreferrer">Brandon McNabb</a></p>	
+		<div style="font-size: 12; color: rgba(255,255,255,1)">Web design by <a style="color: #86aef8" href="https://github.com/bjmcnabb" target="_blank" rel="noopener noreferrer">Brandon McNabb</a></p>	
 		</div>
 	</div>
 </div>	
