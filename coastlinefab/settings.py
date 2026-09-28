@@ -33,7 +33,7 @@ if os.path.isfile(dotenv_file):
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False 
+DEBUG = False
 
 #IS_PRODUCTION = os.getcwd() == '/app'
 #DEBUG = not IS_PRODUCTION
@@ -236,7 +236,8 @@ AWS_DEFAULT_ACL = None
 
 if DEBUG is False:
     # Production / Railway
-    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    #DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    DEFAULT_FILE_STORAGE = 'coastlinefab.storage.MediaStorage'
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 
     CSRF_TRUSTED_ORIGINS = [

@@ -6,6 +6,10 @@ from django.urls import reverse
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFit
 from app.processors import AutoOrient
+from storages.backends.s3boto3 import S3Boto3Storage
+
+class MediaStorage(S3Boto3Storage):
+    location = 'media'
 
 class Album(models.Model):
     title = models.CharField(max_length=70)
